@@ -9,6 +9,9 @@
 - docker image ls
 - docker image rm image_id
 
+# Postman API Collection
+- https://documenter.getpostman.com/view/4791253/TzsZsUhC
+
 ## Installation requirements
 - Node.js >= 16.0.0
 - npm >= 7.0.0
