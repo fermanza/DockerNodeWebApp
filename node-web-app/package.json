@@ -1,0 +1,66 @@
+{
+  "name": "docker-node-web-app",
+  "version": "1.0.0",
+  "description": "API Node Web App",
+  "main": "server.js",
+  "scripts": {
+    "dev": "babel-watch server.js",
+    "build": "rimraf dist/ && babel ./ --out-dir dist --ignore node_modules,migrations",
+    "start": "npm run build && node dist/server.js",
+    "migration:create": "sequelize-cli migration:create --config config/db.js",
+    "migrate": "sequelize-cli db:migrate --config config/db.js",
+    "seed": "sequelize-cli db:seed:all --config config/db.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fermanza/DockerNodeWebApp.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Fernando Manzano",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "app-root-path": "^3.0.0",
+    "bcrypt": "^5.0.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-async-handler": "^1.1.4",
+    "express-fileupload": "^1.1.6-alpha.5",
+    "indicative": "^7.4.4",
+    "jsonwebtoken": "^8.5.1",
+    "logger": "^0.0.1",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.2.5",
+    "nocache": "^2.1.0",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/runtime": "^7.14.6",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-watch": "^7.5.0",
+    "nodemon": "^2.0.12"
+  }
+}
